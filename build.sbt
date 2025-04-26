@@ -8,10 +8,10 @@ scalaVersion := "2.13.16"
 
 libraryDependencies ++= Seq(
   jdbc,
-  "org.scalatestplus.play" %% "scalatestplus-play" % "6.0.0" % Test,
-  "com.h2database" % "h2" % "1.4.190",
+  "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1" % Test,
+  "com.h2database" % "h2" % "2.3.232",
   "io.getquill" %% "quill-jdbc" % "4.8.5",
-  "com.typesafe.play" %% "play-jdbc-evolutions" % "2.9.7"
+  "org.playframework" %% "play-jdbc-evolutions" % "3.0.7"
 )
 
 routesGenerator := InjectedRoutesGenerator
