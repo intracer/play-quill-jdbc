@@ -18,6 +18,7 @@ class AppLoader extends ApplicationLoader {
     with HikariCPComponents {
 
       lazy val db = new H2JdbcContext[SnakeCase](
+        SnakeCase,
         dbApi
           .database("default")
           .dataSource

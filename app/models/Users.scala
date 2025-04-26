@@ -17,12 +17,12 @@ class Users(val db: DbContext) {
     run(users.filter(_ => true))
 
   def create(user: User): User =
-    user.copy(id = run(users.insert(lift(user)).returning(_.id)))
+    user.copy(id = run(users.insertValue(lift(user)).returningGenerated(_.id)))
 
   def delete(user: User): Long =
     run(users.filter(_.id == lift(user.id)).delete)
 
   def update(user: User): Long =
-    run(users.filter(_.id == lift(user.id)).update(lift(user)))
+    run(users.filter(_.id == lift(user.id)).updateValue(lift(user)))
 
 }
