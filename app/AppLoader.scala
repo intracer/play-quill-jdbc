@@ -25,7 +25,7 @@ class AppLoader extends ApplicationLoader {
           .asInstanceOf[DataSource with Closeable])
 
       lazy val users = new Users(db)
-      lazy val usersController = new UsersController(users)
+      lazy val usersController = new UsersController(users, controllerComponents)
 
       val router = Router.from {
         case GET(p"/users/${long(id)}")    => usersController.get(id)
