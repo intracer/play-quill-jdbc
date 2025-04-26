@@ -12,5 +12,6 @@ target
 /.settings
 # Scala IDE files
 /.cache*
+/.bsp
 
 /data

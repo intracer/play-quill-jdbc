@@ -1,9 +1,9 @@
 package controllers
 
-import play.api.libs.json._
-import play.api.libs.functional.syntax._
-import play.api.mvc.{Action, Controller}
 import models.{User, Users}
+import play.api.libs.functional.syntax._
+import play.api.libs.json._
+import play.api.mvc.{Action, Controller}
 
 class UsersController(userServices: Users) extends Controller {
 
