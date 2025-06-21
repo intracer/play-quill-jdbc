@@ -1,7 +1,7 @@
-import io.getquill.{ H2JdbcContext, SnakeCase }
+import io.getquill.{H2JdbcContext, MysqlJdbcContext, SnakeCase}
 
 package object db {
 
-  type DbContext = H2JdbcContext[SnakeCase]
+  type DbContext = MysqlJdbcContext[SnakeCase]
 
 }

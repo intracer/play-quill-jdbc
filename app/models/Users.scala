@@ -8,7 +8,7 @@ class Users(val db: DbContext) {
 
   import db._
 
-  val users = quote(querySchema[User]("users"))
+  private val users = quote(querySchema[User]("users"))
 
   def find(id: Long): Option[User] =
     run(users.filter(c => c.id == lift(id) && c.isActive)).headOption

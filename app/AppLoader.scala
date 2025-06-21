@@ -17,7 +17,7 @@ class AppLoader extends ApplicationLoader {
     new BuiltInComponentsFromContext(context) with DBComponents
     with HikariCPComponents {
 
-      lazy val db = new H2JdbcContext[SnakeCase](
+      lazy val db = new MysqlJdbcContext[SnakeCase](
         SnakeCase,
         dbApi
           .database("default")
